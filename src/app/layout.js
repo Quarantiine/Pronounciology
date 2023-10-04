@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata = {
 	title: "Pronounciology",
-	description: "",
+	description: "Pronounciology",
 };
 
 export default function RootLayout({ children }) {

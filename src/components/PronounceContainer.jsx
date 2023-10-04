@@ -1,17 +1,64 @@
 "use client";
-import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function PronounceContainer({}) {
 	const [inputText, setInputText] = useState("");
+	const [inputTextLengthCheck, setInputTextLengthCheck] = useState(false);
+	const [copied, setCopied] = useState(false);
+	const inputTextRef = useRef();
+
+	useEffect(() => {
+		const checkLength = () => {
+			if (inputText) {
+				setInputTextLengthCheck(true);
+			} else {
+				setInputTextLengthCheck(false);
+			}
+		};
+
+		checkLength();
+	}, [inputText]);
 
 	const handleTextChange = (value) => {
 		setInputText(value);
 	};
 
+	const handleInputTextRef = (e) => {
+		e.preventDefault();
+		inputTextRef.current.value = "";
+		setInputText("");
+	};
+
+	const handleCopyText = (e) => {
+		e.preventDefault();
+
+		if (inputText) {
+			setCopied(true);
+
+			navigator.clipboard
+				.writeText(inputText)
+				.then()
+				.catch((err) => {
+					console.log(err.message);
+				});
+		}
+	};
+
+	useEffect(() => {
+		const timeout = setTimeout(() => {
+			setCopied(false);
+		}, 2000);
+
+		return () => clearTimeout(timeout);
+	}, [copied]);
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
 		const msg = new SpeechSynthesisUtterance();
+		msg.text = inputText;
 
 		const voices = window.speechSynthesis.getVoices();
 		msg.voice = voices[158];
@@ -22,7 +69,6 @@ export default function PronounceContainer({}) {
 
 		if ("speechSynthesis" in window) {
 			if (inputText) {
-				msg.text = inputText;
 				speechSynthesis.speak(msg);
 			}
 		} else {
@@ -32,10 +78,19 @@ export default function PronounceContainer({}) {
 
 	return (
 		<>
-			<form className="w-[90%] sm:w-80 h-fit bg-white border-2 rounded-3xl p-7 flex flex-col justify-center items-center gap-5">
+			<form className="w-[90%] sm:w-80 h-fit bg-white border-2 rounded-3xl p-7 flex flex-col justify-center items-center gap-5 relative">
 				<h1 className="text-xl sm:text-2xl font-semibold w-full text-center">
 					Pronounciology
 				</h1>
+
+				{inputTextLengthCheck && (
+					<button
+						onClick={handleInputTextRef}
+						className="btn border bg-red-500 w-full text-white"
+					>
+						Clear
+					</button>
+				)}
 
 				<div className="flex flex-col justify-center items-center w-full relative gap-2">
 					<input
@@ -43,11 +98,44 @@ export default function PronounceContainer({}) {
 						placeholder="Pronounce any word"
 						type="text"
 						onChange={(e) => handleTextChange(e.target.value)}
-						value={inputText}
+						onKeyDown={(e) => e.key === "Enter" && handleSubmit(e)}
+						ref={inputTextRef}
 					/>
 				</div>
 
-				<button className="btn w-full" onClick={handleSubmit}>
+				<div className="w-full h-auto flex gap-3">
+					<button
+						className="btn w-full bg-white border text-black"
+						onClick={handleCopyText}
+					>
+						{copied ? (
+							<div className="flex justify-center items-center gap-1">
+								<Image
+									src={"/icons/copied.svg"}
+									alt="copied indicator"
+									width={20}
+									height={20}
+								/>
+								<p className="text-sm">Copied</p>
+							</div>
+						) : (
+							"Copy"
+						)}
+					</button>
+
+					<Link
+						href={"https://google.com"}
+						target="_blank"
+						className="btn w-full bg-white border text-black text-center"
+					>
+						Search Word
+					</Link>
+				</div>
+
+				<button
+					className="btn w-full bg-[#0E51FF] text-white"
+					onClick={handleSubmit}
+				>
 					Pronounce
 				</button>
 			</form>
