@@ -6,6 +6,7 @@ import React, { useEffect, useRef, useState } from "react";
 export default function PronounceContainer({}) {
 	const [inputText, setInputText] = useState("");
 	const [inputTextLengthCheck, setInputTextLengthCheck] = useState(false);
+	const [slowSpeechRate, setSlowSpeechRate] = useState(false);
 	const [copied, setCopied] = useState(false);
 	const inputTextRef = useRef();
 
@@ -29,6 +30,11 @@ export default function PronounceContainer({}) {
 		e.preventDefault();
 		inputTextRef.current.value = "";
 		setInputText("");
+	};
+
+	const handleSpeechRate = (e) => {
+		e.preventDefault();
+		setSlowSpeechRate(!slowSpeechRate);
 	};
 
 	const handleCopyText = (e) => {
@@ -63,7 +69,7 @@ export default function PronounceContainer({}) {
 		const voices = window.speechSynthesis.getVoices();
 		msg.voice = voices[158];
 		msg.volume = 1; // From 0 to 1
-		msg.rate = 1; // From 1 to 10
+		msg.rate = slowSpeechRate ? 0.1 : 1; // From 1 to 10
 		msg.pitch = 1; // From 0 to 2
 		msg.lang = "en";
 
@@ -83,16 +89,28 @@ export default function PronounceContainer({}) {
 					Pronounciology
 				</h1>
 
-				{inputTextLengthCheck && (
-					<button
-						onClick={handleInputTextRef}
-						className="btn border bg-red-500 w-full text-white"
-					>
-						Clear
-					</button>
-				)}
-
 				<div className="flex flex-col justify-center items-center w-full relative gap-2">
+					<button
+						onClick={handleSpeechRate}
+						className="flex justify-center items-center gap-1"
+					>
+						<p className="text-sm">Slow</p>
+						{slowSpeechRate ? (
+							<Image
+								src={"/icons/toggle_on.svg"}
+								alt="on"
+								width={24}
+								height={24}
+							/>
+						) : (
+							<Image
+								src={"/icons/toggle_off.svg"}
+								alt="off"
+								width={24}
+								height={24}
+							/>
+						)}
+					</button>
 					<input
 						className="px-3 py-2 rounded-3xl outline-none border w-full text-center placeholder:text-center"
 						placeholder="Pronounce any word"
@@ -131,6 +149,15 @@ export default function PronounceContainer({}) {
 						Search Word
 					</Link>
 				</div>
+
+				{inputTextLengthCheck && (
+					<button
+						onClick={handleInputTextRef}
+						className="btn border bg-red-500 w-full text-white"
+					>
+						Clear
+					</button>
+				)}
 
 				<button
 					className="btn w-full bg-[#0E51FF] text-white"
