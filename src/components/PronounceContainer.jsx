@@ -125,8 +125,8 @@ export default function PronounceContainer({}) {
 	// });
 
 	return (
-		<div className="flex justify-center items-start gap-5">
-			<form className="w-[90%] sm:w-80 h-[350px] sm:h-[300px] bg-white border-2 rounded-3xl p-7 flex flex-col justify-center items-center gap-5 relative">
+		<div className="flex flex-col sm:flex-row justify-center items-start gap-5">
+			<form className="w-full sm:w-80 h-[350px] sm:h-[300px] bg-white border-2 rounded-3xl p-7 flex flex-col justify-center items-center gap-5 relative">
 				<h1 className="text-xl sm:text-2xl font-semibold w-full text-center">
 					Pronounciology
 				</h1>
@@ -171,6 +171,7 @@ export default function PronounceContainer({}) {
 							onKeyDown={(e) => e.key === "Enter" && handleSubmit(e)}
 							ref={inputTextRef}
 						/>
+
 						{inputTextLengthCheck && (
 							<button
 								onClick={handleInputTextRef}
@@ -218,9 +219,8 @@ export default function PronounceContainer({}) {
 					Pronounce
 				</button>
 			</form>
-
 			<div
-				className={`w-52 p-5 border-2 rounded-3xl flex justify-center items-center flex-col gap-5 relative overflow-x-hidden overflow-y-scroll ${
+				className={`w-full sm:w-52 p-5 border-2 rounded-3xl flex justify-center items-center flex-col gap-5 relative overflow-x-hidden overflow-y-scroll ${
 					openDropDown ? "h-[350px] sm:h-[300px]" : "h-auto"
 				}`}
 			>
