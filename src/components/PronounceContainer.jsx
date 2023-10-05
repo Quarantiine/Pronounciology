@@ -160,10 +160,10 @@ export default function PronounceContainer({}) {
 						)}
 					</button>
 
-					<div className="relative w-full">
+					<div className="relative w-full flex justify-center items-center">
 						<input
-							className={`px-3 py-2 outline-none border w-full text-center placeholder:text-center ${
-								inputText ? "rounded-t-3xl" : "rounded-3xl"
+							className={`px-3 py-2 outline-none border w-full text-center placeholder:text-center text-sm ${
+								inputText ? "rounded-l-3xl" : "rounded-3xl"
 							}`}
 							placeholder="Pronounce any word"
 							type="text"
@@ -175,7 +175,7 @@ export default function PronounceContainer({}) {
 						{inputTextLengthCheck && (
 							<button
 								onClick={handleInputTextRef}
-								className="rounded-b-3xl cursor-pointer px-3 py-2 text-sm w-full hover:opacity-80 transition-all border bg-red-500 text-white"
+								className="rounded-r-3xl cursor-pointer px-3 py-2 text-sm w-[30%] hover:opacity-80 transition-all border bg-red-500 text-white"
 							>
 								Clear
 							</button>
