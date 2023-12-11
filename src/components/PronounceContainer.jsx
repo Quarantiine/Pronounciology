@@ -186,7 +186,7 @@ export default function PronounceContainer({}) {
 			)}
 
 			<form className="w-full sm:w-80 h-auto bg-white border-2 rounded-3xl p-7 flex flex-col justify-center items-center gap-5 relative">
-				<h1 className="text-xl sm:text-2xl font-semibold w-full text-center">
+				<h1 className="text-xl font-semibold w-full text-center">
 					Pronounciology
 				</h1>
 
@@ -245,7 +245,9 @@ export default function PronounceContainer({}) {
 
 						{historyDropdown && (
 							<div className="history-dropdown-container history-dropdown-overflow h-20 bg-white border border-t-transparent w-[90%] flex sm:hidden flex-col justify-start items-center overflow-x-hidden overflow-y-scroll px-4 py-2 rounded-b-md text-sm">
-								<p className="text-gray-500 pb-1">Word History:</p>
+								<h1 className="text-xl font-semibold w-full text-center">
+									Word History:
+								</h1>
 
 								{parsedHistoryItemList.length > 0 ? (
 									parsedHistoryItemList.slice(0, 20).map((item) => {
@@ -313,7 +315,9 @@ export default function PronounceContainer({}) {
 			<div
 				className={`history-dropdown-container history-dropdown-overflow w-full max-h-[180px] h-auto bg-white border-2 rounded-3xl flex sm:hidden flex-col justify-start items-start overflow-x-hidden overflow-y-scroll px-8 py-2`}
 			>
-				<p className="pb-1 w-full text-center">Word History</p>
+				<h1 className="text-xl font-semibold w-full text-center">
+					Word History
+				</h1>
 
 				<div className="flex flex-col justify-center items-center gap-1 w-full">
 					{parsedHistoryItemList.length > 0 ? (
@@ -346,7 +350,12 @@ export default function PronounceContainer({}) {
 					}`}
 				>
 					<div className="w-full flex justify-center items-center flex-col gap-2 h-full">
-						<h1 htmlFor="languageChange">Change Language</h1>
+						<h1
+							className="text-xl font-semibold w-full text-center"
+							htmlFor="languageChange"
+						>
+							Change Language
+						</h1>
 						<div
 							onClick={handleOpenDropDown}
 							className="bg-gray-200 p-1 rounded-3xl outline-none text-center w-full btn"
@@ -382,7 +391,9 @@ export default function PronounceContainer({}) {
 				<div
 					className={`history-dropdown-container history-dropdown-overflow w-full max-h-[180px] h-auto bg-white border-2 rounded-3xl hidden sm:flex flex-col justify-start items-start overflow-x-hidden overflow-y-scroll px-8 py-2`}
 				>
-					<p className="pb-1 w-full text-center">Word History</p>
+					<h1 className="text-xl font-semibold w-full text-center">
+						Word History
+					</h1>
 
 					<div className="flex flex-col justify-start items-start gap-1 w-full">
 						{parsedHistoryItemList.length > 0 ? (

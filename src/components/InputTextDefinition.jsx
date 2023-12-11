@@ -31,7 +31,7 @@ export default function InputTextDefinition({ textDefinition }) {
 		<>
 			<div className="definition-container-overflow w-full max-h-[200px] h-fit border-2 bg-white rounded-3xl p-5 flex flex-col justify-start items-start overflow-x-hidden overflow-y-scroll gap-2">
 				<div className="flex justify-between items-center gap-2 w-full">
-					<h1 className="text-xl sm:text-2xl font-semibold w-full">
+					<h1 className="text-xl font-semibold w-full">
 						{textDefinition?.meanings?.length > 1
 							? "Definitions"
 							: "Definition"}{" "}
