@@ -17,10 +17,9 @@ export default function PronounceContainer({}) {
 	const [inputDefinition, setInputDefinition] = useState(false);
 	const [textDefinition, setTextDefinition] = useState("");
 
-	const localStorageHistoryItems =
-		localStorage && localStorage?.getItem("inputItems");
-	const parsedHistoryItemList = JSON.parse(localStorageHistoryItems);
-	localStorage.setItem("inputItems", JSON.stringify(listOfInputText));
+	// const localStorageHistoryItems = localStorage?.getItem("inputItems");
+	// const parsedHistoryItemList = JSON.parse(localStorageHistoryItems);
+	// localStorage.setItem("inputItems", JSON.stringify(listOfInputText));
 
 	useEffect(() => {
 		const definitionSystem = async () => {
@@ -136,8 +135,8 @@ export default function PronounceContainer({}) {
 
 		if ("speechSynthesis" in window) {
 			if (inputText) {
-				!parsedHistoryItemList.map((item) => item).includes(inputText) &&
-					setListOfInputText((prevItems) => [inputText, ...prevItems]);
+				// !parsedHistoryItemList.map((item) => item).includes(inputText) &&
+				// 	setListOfInputText((prevItems) => [inputText, ...prevItems]);
 				speechSynthesis.speak(msg);
 				// console.log(pickVoice);
 			}
@@ -243,7 +242,7 @@ export default function PronounceContainer({}) {
 							)}
 						</div>
 
-						{historyDropdown && (
+						{/* {historyDropdown && (
 							<div className="history-dropdown-container history-dropdown-overflow h-20 bg-white border border-t-transparent w-[90%] flex sm:hidden flex-col justify-start items-center overflow-x-hidden overflow-y-scroll px-4 py-2 rounded-b-md text-sm">
 								<h1 className="text-xl font-semibold w-full text-center">
 									Word History:
@@ -266,7 +265,7 @@ export default function PronounceContainer({}) {
 									<p className="text-gray-400">No History</p>
 								)}
 							</div>
-						)}
+						)} */}
 					</div>
 				</div>
 
@@ -312,7 +311,7 @@ export default function PronounceContainer({}) {
 				</button>
 			</form>
 
-			<div
+			{/* <div
 				className={`history-dropdown-container history-dropdown-overflow w-full max-h-[180px] h-auto bg-white border-2 rounded-3xl flex sm:hidden flex-col justify-start items-start overflow-x-hidden overflow-y-scroll px-8 py-2`}
 			>
 				<h1 className="text-xl font-semibold w-full text-center">
@@ -341,7 +340,7 @@ export default function PronounceContainer({}) {
 						<p className="text-gray-400 w-full text-center">No History</p>
 					)}
 				</div>
-			</div>
+			</div> */}
 
 			<div className="flex flex-col justify-center items-center gap-2 w-full sm:w-[260px] h-fit mb-5 sm:mb-0">
 				<div
@@ -388,7 +387,7 @@ export default function PronounceContainer({}) {
 					</div>
 				</div>
 
-				<div
+				{/* <div
 					className={`history-dropdown-container history-dropdown-overflow w-full max-h-[180px] h-auto bg-white border-2 rounded-3xl hidden sm:flex flex-col justify-start items-start overflow-x-hidden overflow-y-scroll px-8 py-2`}
 				>
 					<h1 className="text-xl font-semibold w-full text-center">
@@ -417,7 +416,7 @@ export default function PronounceContainer({}) {
 							<p className="text-gray-400 w-full text-center">No History</p>
 						)}
 					</div>
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);
