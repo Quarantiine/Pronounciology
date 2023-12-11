@@ -135,10 +135,6 @@ export default function PronounceContainer({}) {
 		msg.pitch = 1; // From 0 to 2
 		msg.lang = msgLangAbbrText;
 
-		msg.onpause = (result) => {
-			console.log(result);
-		};
-
 		if ("speechSynthesis" in window) {
 			if (inputText) {
 				!listOfInputText.map((item) => item).includes(inputText) &&
