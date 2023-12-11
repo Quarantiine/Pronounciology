@@ -125,7 +125,7 @@ export default function PronounceContainer({}) {
 
 		const pickVoice = voicesList
 			?.filter((value) => value.title === msgLangText)
-			?.map((v) => v.voice)[0];
+			?.map((v) => v.voice)[158];
 		msg.voice = pickVoice;
 
 		msg.volume = 1; // From 0 to 1
