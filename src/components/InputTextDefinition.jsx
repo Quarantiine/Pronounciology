@@ -29,7 +29,7 @@ export default function InputTextDefinition({
 				{copied &&
 					createPortal(
 						<>
-							<div className="flex justify-between items-center gap-2 fixed top-5 left-1/2 -translate-x-1/2 w-96 h-fit bg-white rounded-3xl border px-5 py-3 border-green-500 ">
+							<div className="flex justify-between items-center gap-2 fixed top-5 left-1/2 -translate-x-1/2 w-[90%] sm:w-96 h-fit bg-white rounded-3xl border px-5 py-3 border-green-500 ">
 								<div className="flex flex-col gap-1">
 									<p className="text-sm font-bold">Copied Definition:</p>
 									<p className="text-sm">{definition}</p>
