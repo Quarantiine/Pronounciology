@@ -426,7 +426,7 @@ export default function PronounceContainer({}) {
 
 							<div className="flex flex-col justify-start items-start gap-1 w-full">
 								{listOfInputText.length > 0 ? (
-									listOfInputText.slice(0, 20).map((item, index) => {
+									listOfInputText.map((item, index) => {
 										return (
 											<div
 												className="flex justify-center items-start gap-1"
