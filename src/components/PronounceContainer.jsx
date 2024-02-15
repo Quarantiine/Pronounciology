@@ -117,12 +117,12 @@ export default function PronounceContainer({}) {
 		const voices = window.speechSynthesis.getVoices();
 
 		const voicesList = [
-			{ title: "English", voice: voices[158] }, // English
-			{ title: "Spanish", voice: voices[25] }, // Spanish
-			{ title: "French", voice: voices[19] }, // French
-			{ title: "German", voice: voices[21] }, // German
-			{ title: "Italian", voice: voices[29] }, // Italian
-			{ title: "Portuguese", voice: voices[30] }, // Portuguese
+			{ title: "English", voice: voices[252] }, // English
+			{ title: "Spanish", voice: voices[430] }, // Spanish
+			{ title: "French", voice: voices[287] }, // French
+			{ title: "German", voice: voices[306] }, // German
+			{ title: "Italian", voice: voices[329] }, // Italian
+			{ title: "Portuguese", voice: voices[374] }, // Portuguese
 		];
 
 		const pickVoice = voicesList
@@ -177,11 +177,11 @@ export default function PronounceContainer({}) {
 		});
 	}, []);
 
-	// useEffect(() => {
-	// 	speechSynthesis.getVoices().map(function (voice, index) {
-	// 		console.log(index, voice.name, voice.default ? voice.default : false);
-	// 	});
-	// });
+	useEffect(() => {
+		speechSynthesis.getVoices().map(function (voice, index) {
+			console.log(index, voice.name, voice.default ? voice.default : false);
+		});
+	});
 
 	return (
 		<>
