@@ -1,29 +1,29 @@
 [
 	{
 		"abbrLang": "en",
-		"fullLang": "English (Default)",
+		"fullLang": "English",
 		"searchText": "English"
 	},
 	{
 		"abbrLang": "es",
-		"fullLang": "Spanish (Default)",
+		"fullLang": "Spanish",
 		"searchText": "Spanish"
 	},
-	{ "abbrLang": "fr", "fullLang": "French (Default)", "searchText": "French" },
-	{ "abbrLang": "de", "fullLang": "German (Default)", "searchText": "German" },
+	{ "abbrLang": "fr", "fullLang": "French", "searchText": "French" },
+	{ "abbrLang": "de", "fullLang": "German", "searchText": "German" },
 	{
 		"abbrLang": "it",
-		"fullLang": "Italian (Default)",
+		"fullLang": "Italian",
 		"searchText": "Italian"
 	},
 	{
 		"abbrLang": "pt",
-		"fullLang": "Portuguese (Default)",
+		"fullLang": "Portuguese",
 		"searchText": "Portuguese"
 	},
 	{
 		"abbrLang": "jp",
-		"fullLang": "Japanese (Default)",
+		"fullLang": "Japanese",
 		"searchText": "Japanese"
 	},
 	{ "abbrLang": "afr", "fullLang": "Afrikaans", "searchText": "Afrikaans" },

@@ -6,7 +6,7 @@ import msgLangs from "../data/msgLangs.json";
 
 export default function PronounceContainer() {
 	const [inputText, setInputText] = useState("");
-	const [msgLangText, setMsgLangText] = useState("English (Default)");
+	const [msgLangText, setMsgLangText] = useState("English");
 	const [msgLangAbbrText, setMsgLangAbbrText] = useState("en");
 	const [inputTextLengthCheck, setInputTextLengthCheck] = useState(false);
 	const [openDropDown, setOpenDropDown] = useState(false);
