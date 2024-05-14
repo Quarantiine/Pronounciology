@@ -134,8 +134,8 @@ export default function PronounceContainer() {
 	}, []);
 
 	// useEffect(() => {
-	// 	speechSynthesis.getVoices().map(function (voice, index) {
-	// 		console.log(index, voice.name, voice.default ? voice.default : false);
+	// 	speechSynthesis.getVoices().map(function (voice) {
+	// 		console.log(voice);
 	// 	});
 	// });
 
@@ -240,7 +240,6 @@ export default function PronounceContainer() {
 				!listOfInputText.map((item) => item).includes(inputText) &&
 					setListOfInputText((prevItems) => [inputText, ...prevItems]);
 				speechSynthesis.speak(msg);
-				// console.log(pickVoice);
 			}
 		} else {
 			alert("Sorry, your browser doesn't support text to speech!");
@@ -343,7 +342,7 @@ export default function PronounceContainer() {
 										</h1>
 
 										{listOfInputText.length > 0 ? (
-											listOfInputText.slice(0, 20).map((item) => {
+											listOfInputText.map((item) => {
 												return (
 													<React.Fragment key={item}>
 														<button
@@ -479,12 +478,12 @@ export default function PronounceContainer() {
 												const fullLangB = b.searchText.toLowerCase();
 
 												if (fullLangA < fullLangB) {
-													return -1; // a comes before b
+													return -1;
 												}
 												if (fullLangA > fullLangB) {
-													return 1; // a comes after b
+													return 1;
 												}
-												return 0; // a and b are equal
+												return 0;
 											})
 											.map((lang, index) => {
 												if (

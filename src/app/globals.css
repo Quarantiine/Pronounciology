@@ -8,6 +8,10 @@
 	@apply cursor-pointer px-3 py-2 rounded-3xl text-sm w-full hover:opacity-60 transition-all;
 }
 
+.text-btn {
+	@apply cursor-pointer text-sm hover:opacity-60 transition-all;
+}
+
 /* CSS */
 
 .main-container-overflow::-webkit-scrollbar {
