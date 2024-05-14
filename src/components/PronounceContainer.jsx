@@ -117,7 +117,7 @@ export default function PronounceContainer() {
 	useEffect(() => {
 		if (inputText.length < 1) {
 			setInputDefinition("");
-			// inputTextRef.current.value = "";
+			// inputTextRef.current?.value = "";
 		}
 	}, [inputText]);
 
@@ -148,527 +148,80 @@ export default function PronounceContainer() {
 		const voices = window.speechSynthesis.getVoices();
 
 		const voicesList = [
-			{ title: "English", voice: voices[252], searchText: "English" },
-			{ title: "Spanish", voice: voices[430], searchText: "Spanish" },
-			{ title: "French", voice: voices[287], searchText: "French" },
-			{ title: "German", voice: voices[306], searchText: "German" },
-			{ title: "Italian", voice: voices[329], searchText: "Italian" },
-			{ title: "Portuguese", voice: voices[374], searchText: "Portuguese" },
-			{ title: "Japanese", voice: voices[331], searchText: "Japanese" },
-			{ title: "Afrikaans", voice: voices[157], searchText: "Afrikaans" },
-			{ title: "Albanian", voice: voices[159], searchText: "Albanian" },
-			{ title: "Amharic", voice: voices[162], searchText: "Amharic" },
-			{ title: "Arabic", voice: voices[163], searchText: "Arabic" },
-			{ title: "Azerbaijani", voice: voices[196], searchText: "Azerbaijani" },
-			{ title: "Bangla", voice: voices[197], searchText: "Bangla" },
-			{ title: "Bengali", voice: voices[200], searchText: "Bengali" },
-			{ title: "Bosnian", voice: voices[201], searchText: "Bosnian" },
-			{ title: "Bulgarian", voice: voices[204], searchText: "Bulgarian" },
-			{ title: "Burmese", voice: voices[206], searchText: "Burmese" },
-			{ title: "Catalan", voice: voices[208], searchText: "Catalan" },
 			{
-				title: "Chinese (Cantonese Traditional)",
-				voice: voices[209],
-				searchText: "Chinese Cantonese Traditional",
+				title: "Arabic",
+				voice: voices[9],
+				searchText: "Arabic",
 			},
 			{
-				title: "Chinese (Hong Kong)",
-				voice: voices[211],
+				title: "Chinese",
+				voice: voices[56],
 				searchText: "Chinese Hong Kong",
 			},
 			{
-				title: "Chinese (Mainland)",
-				voice: voices[216],
-				searchText: "Chinese Mainland",
+				title: "English",
+				voice: voices[0],
+				searchText: "English",
 			},
 			{
-				title: "Chinese (Northeastern Mandarin)",
-				voice: voices[218],
-				searchText: "Chinese Northeastern Mandarin",
+				title: "French",
+				voice: voices[133],
+				searchText: "French",
 			},
 			{
-				title: "Chinese (Taiwan)",
-				voice: voices[220],
-				searchText: "Chinese Taiwan",
+				title: "German",
+				voice: voices[150],
+				searchText: "German",
 			},
 			{
-				title: "Chinese (Taiwanese Mandarin)",
-				voice: voices[221],
-				searchText: "Chinese Taiwanese Mandarin",
-			},
-			{ title: "Croatian", voice: voices[223], searchText: "Croatian" },
-			{ title: "Czech", voice: voices[226], searchText: "Czech" },
-			{ title: "Danish", voice: voices[227], searchText: "Danish" },
-			{ title: "Dutch", voice: voices[230], searchText: "Dutch" },
-			{
-				title: "English (India)",
-				voice: voices[241],
-				searchText: "English India",
-			},
-			{
-				title: "English (Ireland)",
-				voice: voices[244],
-				searchText: "English Ireland",
-			},
-			{
-				title: "English (Kenya)",
-				voice: voices[245],
-				searchText: "English Kenya",
-			},
-			{
-				title: "English (New Zealand)",
-				voice: voices[248],
-				searchText: "English New Zealand",
-			},
-			{
-				title: "English (Nigeria)",
-				voice: voices[250],
-				searchText: "English Nigeria",
-			},
-			{
-				title: "English (Philippines)",
-				voice: voices[256],
-				searchText: "English Philippines",
-			},
-			{
-				title: "English (Singapore)",
-				voice: voices[257],
-				searchText: "English Singapore",
-			},
-			{
-				title: "English (South Africa)",
-				voice: voices[259],
-				searchText: "English South Africa",
-			},
-			{
-				title: "English (Tanzania)",
-				voice: voices[261],
-				searchText: "English Tanzania",
-			},
-			{
-				title: "English (United Kingdom)",
-				voice: voices[266],
-				searchText: "English United Kingdom",
-			},
-			{
-				title: "Estonian (Estonia)",
-				voice: voices[277],
-				searchText: "Estonian Estonia",
-			},
-			{
-				title: "Filipino (Philippines)",
-				voice: voices[280],
-				searchText: "Filipino Philippines",
-			},
-			{
-				title: "Finnish (Finland)",
-				voice: voices[282],
-				searchText: "Finnish Finland",
-			},
-			{
-				title: "French (Belgium)",
-				voice: voices[283],
-				searchText: "French Belgium",
-			},
-			{
-				title: "French (Canada)",
-				voice: voices[288],
-				searchText: "French Canada",
-			},
-			{
-				title: "French (France)",
-				voice: voices[292],
-				searchText: "French France",
-			},
-			{
-				title: "French (Switzerland)",
-				voice: voices[294],
-				searchText: "French Switzerland",
-			},
-			{
-				title: "Galician (Spain)",
-				voice: voices[297],
-				searchText: "Galician Spain",
-			},
-			{
-				title: "Georgian (Georgia)",
-				voice: voices[299],
-				searchText: "Georgian Georgia",
-			},
-			{
-				title: "German (Austria)",
-				voice: voices[300],
-				searchText: "German Austria",
-			},
-			{
-				title: "German (Germany)",
-				voice: voices[304],
-				searchText: "German Germany",
-			},
-			{
-				title: "German (Switzerland)",
-				voice: voices[309],
-				searchText: "German Switzerland",
-			},
-			{
-				title: "Greek (Greece)",
-				voice: voices[310],
-				searchText: "Greek Greece",
-			},
-			{
-				title: "Gujarati (India)",
-				voice: voices[313],
-				searchText: "Gujarati India",
-			},
-			{
-				title: "Hebrew (Israel)",
-				voice: voices[314],
+				title: "Hebrew",
+				voice: voices[164],
 				searchText: "Hebrew Israel",
 			},
-			{ title: "Hindi (India)", voice: voices[317], searchText: "Hindi India" },
 			{
-				title: "Hungarian (Hungary)",
-				voice: voices[318],
-				searchText: "Hungarian Hungary",
+				title: "Italian",
+				voice: voices[176],
+				searchText: "Italian",
 			},
 			{
-				title: "Icelandic (Iceland)",
-				voice: voices[321],
-				searchText: "Icelandic Iceland",
+				title: "Japanese",
+				voice: voices[181],
+				searchText: "Japanese",
 			},
 			{
-				title: "Indonesian (Indonesia)",
-				voice: voices[322],
-				searchText: "Indonesian Indonesia",
-			},
-			{
-				title: "Italian (Italy)",
-				voice: voices[329],
-				searchText: "Italian Italy",
-			},
-			{
-				title: "Javanese (Indonesia)",
-				voice: voices[333],
-				searchText: "Javanese Indonesia",
-			},
-			{
-				title: "Kannada (India)",
-				voice: voices[335],
-				searchText: "Kannada India",
-			},
-			{
-				title: "Kazakh (Kazakhstan)",
-				voice: voices[336],
-				searchText: "Kazakh Kazakhstan",
-			},
-			{
-				title: "Khmer (Cambodia)",
-				voice: voices[339],
-				searchText: "Khmer Cambodia",
-			},
-			{
-				title: "Korean (Korea)",
-				voice: voices[342],
+				title: "Korean",
+				voice: voices[190],
 				searchText: "Korean Korea",
 			},
-			{ title: "Lao (Laos)", voice: voices[343], searchText: "Lao Laos" },
 			{
-				title: "Latvian (Latvia)",
-				voice: voices[345],
-				searchText: "Latvian Latvia",
+				title: "Portuguese",
+				voice: voices[224],
+				searchText: "Portuguese",
 			},
 			{
-				title: "Lithuanian (Lithuania)",
-				voice: voices[348],
-				searchText: "Lithuanian Lithuania",
-			},
-			{
-				title: "Macedonian (Republic of North Macedonia)",
-				voice: voices[350],
-				searchText: "Macedonian Republic of North Macedonia",
-			},
-			{
-				title: "Malay (Malaysia)",
-				voice: voices[352],
-				searchText: "Malay Malaysia",
-			},
-			{
-				title: "Malayalam (India)",
-				voice: voices[354],
-				searchText: "Malayalam India",
-			},
-			{
-				title: "Maltese (Malta)",
-				voice: voices[355],
-				searchText: "Maltese Malta",
-			},
-			{
-				title: "Marathi (India)",
-				voice: voices[357],
-				searchText: "Marathi India",
-			},
-			{
-				title: "Mongolian (Mongolia)",
-				voice: voices[360],
-				searchText: "Mongolian Mongolia",
-			},
-			{
-				title: "Nepali (Nepal)",
-				voice: voices[362],
-				searchText: "Nepali Nepal",
-			},
-			{
-				title: "Norwegian (Bokmål, Norway)",
-				voice: voices[364],
-				searchText: "Norwegian Bokmål, Norway",
-			},
-			{
-				title: "Pashto (Afghanistan)",
-				voice: voices[366],
-				searchText: "Pashto Afghanistan",
-			},
-			{
-				title: "Persian (Iran)",
-				voice: voices[367],
-				searchText: "Persian Iran",
-			},
-			{
-				title: "Polish (Poland)",
-				voice: voices[370],
-				searchText: "Polish Poland",
-			},
-			{
-				title: "Portuguese (Brazil)",
-				voice: voices[371],
-				searchText: "Portuguese Brazil",
-			},
-			{
-				title: "Portuguese (Portugal)",
-				voice: voices[375],
-				searchText: "Portuguese Portugal",
-			},
-			{
-				title: "Romanian (Romania)",
-				voice: voices[376],
-				searchText: "Romanian Romania",
-			},
-			{
-				title: "Russian (Russia)",
-				voice: voices[379],
+				title: "Russian",
+				voice: voices[228],
 				searchText: "Russian Russia",
 			},
 			{
-				title: "Serbian (Serbia)",
-				voice: voices[381],
-				searchText: "Serbian Serbia",
+				title: "Spanish",
+				voice: voices[279],
+				searchText: "Spanish",
 			},
 			{
-				title: "Sinhala (Sri Lanka)",
-				voice: voices[382],
-				searchText: "Sinhala Sri Lanka",
-			},
-			{
-				title: "Slovak (Slovakia)",
-				voice: voices[385],
-				searchText: "Slovak Slovakia",
-			},
-			{
-				title: "Slovenian (Slovenia)",
-				voice: voices[386],
-				searchText: "Slovenian Slovenia",
-			},
-			{
-				title: "Somali (Somalia)",
-				voice: voices[388],
-				searchText: "Somali Somalia",
-			},
-			{
-				title: "Spanish (Argentina)",
-				voice: voices[390],
-				searchText: "Spanish Argentina",
-			},
-			{
-				title: "Spanish (Bolivia)",
-				voice: voices[393],
-				searchText: "Spanish Bolivia",
-			},
-			{
-				title: "Spanish (Chile)",
-				voice: voices[394],
-				searchText: "Spanish Chile",
-			},
-			{
-				title: "Spanish (Colombia)",
-				voice: voices[398],
-				searchText: "Spanish Colombia",
-			},
-			{
-				title: "Spanish (Costa Rica)",
-				voice: voices[400],
-				searchText: "Spanish Costa Rica",
-			},
-			{
-				title: "Spanish (Cuba)",
-				voice: voices[401],
-				searchText: "Spanish Cuba",
-			},
-			{
-				title: "Spanish (Dominican Republic)",
-				voice: voices[404],
-				searchText: "Spanish Dominican Republic",
-			},
-			{ title: "Spanish (Ecuador)", voice: voices[405], searchText: "Ecuador" },
-			{
-				title: "Spanish (El Salvador)",
-				voice: voices[407],
-				searchText: "El Salvador",
-			},
-			{
-				title: "Spanish (Equatorial Guinea)",
-				voice: voices[410],
-				searchText: "Spanish Equatorial Guinea",
-			},
-			{
-				title: "Spanish (Guatemala)",
-				voice: voices[412],
-				searchText: "Spanish Guatemala",
-			},
-			{
-				title: "Spanish (Honduras)",
-				voice: voices[414],
-				searchText: "Spanish Honduras",
-			},
-			{
-				title: "Spanish (Mexico)",
-				voice: voices[415],
-				searchText: "Spanish Mexico",
-			},
-			{
-				title: "Spanish (Nicaragua)",
-				voice: voices[418],
-				searchText: "Spanish Nicaragua",
-			},
-			{
-				title: "Spanish (Panama)",
-				voice: voices[419],
-				searchText: "Spanish Panama",
-			},
-			{
-				title: "Spanish (Paraguay)",
-				voice: voices[422],
-				searchText: "Spanish Paraguay",
-			},
-			{
-				title: "Spanish (Peru)",
-				voice: voices[424],
-				searchText: "Spanish Peru",
-			},
-			{
-				title: "Spanish (Puerto Rico)",
-				voice: voices[425],
-				searchText: "Spanish Puerto Rico",
-			},
-			{
-				title: "Spanish (Spain)",
-				voice: voices[428],
-				searchText: "Spanish Spain",
-			},
-			{
-				title: "Spanish (United States)",
-				voice: voices[430],
-				searchText: "Spanish United States",
-			},
-			{
-				title: "Spanish (Uruguay)",
-				voice: voices[432],
-				searchText: "Spanish Uruguay",
-			},
-			{
-				title: "Spanish (Venezuela)",
-				voice: voices[433],
-				searchText: "Spanish Venezuela",
-			},
-			{
-				title: "Sundanese (Indonesia)",
-				voice: voices[436],
-				searchText: "Sundanese Indonesia",
-			},
-			{
-				title: "Swahili (Kenya)",
-				voice: voices[438],
-				searchText: "Swahili Kenya",
-			},
-			{
-				title: "Swahili (Tanzania)",
-				voice: voices[439],
-				searchText: "Swahili Tanzania",
-			},
-			{
-				title: "Swedish (Sweden)",
-				voice: voices[442],
+				title: "Swedish",
+				voice: voices[291],
 				searchText: "Swedish Sweden",
 			},
-			{ title: "Tamil (India)", voice: voices[444], searchText: "Tamil India" },
 			{
-				title: "Tamil (Malaysia)",
-				voice: voices[446],
-				searchText: "Tamil Malaysia",
-			},
-			{
-				title: "Tamil (Singapore)",
-				voice: voices[448],
-				searchText: "Tamil Singapore",
-			},
-			{
-				title: "Tamil (Sri Lanka)",
-				voice: voices[450],
-				searchText: "Tamil Sri Lanka",
-			},
-			{
-				title: "Telugu (India)",
-				voice: voices[452],
-				searchText: "Telugu India",
-			},
-			{
-				title: "Thai (Thailand)",
-				voice: voices[454],
-				searchText: "Thai Thailand",
-			},
-			{
-				title: "Turkish (Turkey)",
-				voice: voices[455],
+				title: "Turkish",
+				voice: voices[305],
 				searchText: "Turkish Turkey",
 			},
 			{
-				title: "Ukrainian (Ukraine)",
-				voice: voices[458],
-				searchText: "Ukrainian Ukraine",
-			},
-			{ title: "Urdu (India)", voice: voices[459], searchText: "Urdu India" },
-			{
-				title: "Urdu (Pakistan)",
-				voice: voices[462],
-				searchText: "Urdu Pakistan",
-			},
-			{
-				title: "Uzbek (Uzbekistan)",
-				voice: voices[463],
-				searchText: "Uzbek Uzbekistan",
-			},
-			{
-				title: "Vietnamese (Vietnam)",
-				voice: voices[465],
+				title: "Vietnamese",
+				voice: voices[315],
 				searchText: "Vietnamese Vietnam",
-			},
-			{
-				title: "Welsh (United Kingdom)",
-				voice: voices[468],
-				searchText: "Welsh United Kingdom",
-			},
-			{
-				title: "Zulu (South Africa)",
-				voice: voices[470],
-				searchText: "Zulu South Africa",
 			},
 		];
 
@@ -885,7 +438,7 @@ export default function PronounceContainer() {
 
 					<div className="flex flex-col justify-center items-center gap-2 w-full sm:w-[260px] h-fit mb-5 sm:mb-0">
 						<div
-							className={`w-full p-5 border-2 rounded-3xl flex justify-center items-center flex-col gap-5 relative overflow-x-hidden overflow-y-scroll ${
+							className={`w-full p-5 border-2 rounded-3xl flex justify-center items-center flex-col gap-5 relative overflow-x-hidden overflow-y-scroll overflow-hide-thumb ${
 								openDropDown ? "h-[350px] sm:h-[300px]" : "h-auto"
 							}`}
 						>

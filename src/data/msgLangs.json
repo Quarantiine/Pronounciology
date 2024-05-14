@@ -1,20 +1,48 @@
 [
 	{
+		"abbrLang": "ar",
+		"fullLang": "Arabic",
+		"searchText": "Arabic"
+	},
+	{
+		"abbrLang": "hk",
+		"fullLang": "Chinese",
+		"searchText": "Chinese Hong Kong"
+	},
+	{
 		"abbrLang": "en",
 		"fullLang": "English",
 		"searchText": "English"
 	},
 	{
-		"abbrLang": "es",
-		"fullLang": "Spanish",
-		"searchText": "Spanish"
+		"abbrLang": "fr",
+		"fullLang": "French",
+		"searchText": "French"
 	},
-	{ "abbrLang": "fr", "fullLang": "French", "searchText": "French" },
-	{ "abbrLang": "de", "fullLang": "German", "searchText": "German" },
+	{
+		"abbrLang": "de",
+		"fullLang": "German",
+		"searchText": "German"
+	},
+	{
+		"abbrLang": "he",
+		"fullLang": "Hebrew",
+		"searchText": "Hebrew Israel"
+	},
 	{
 		"abbrLang": "it",
 		"fullLang": "Italian",
 		"searchText": "Italian"
+	},
+	{
+		"abbrLang": "jp",
+		"fullLang": "Japanese",
+		"searchText": "Japanese"
+	},
+	{
+		"abbrLang": "ko",
+		"fullLang": "Korean",
+		"searchText": "Korean Korea"
 	},
 	{
 		"abbrLang": "pt",
@@ -22,535 +50,28 @@
 		"searchText": "Portuguese"
 	},
 	{
-		"abbrLang": "jp",
-		"fullLang": "Japanese",
-		"searchText": "Japanese"
-	},
-	{ "abbrLang": "afr", "fullLang": "Afrikaans", "searchText": "Afrikaans" },
-	{ "abbrLang": "al", "fullLang": "Albanian", "searchText": "Albanian" },
-	{ "abbrLang": "am", "fullLang": "Amharic", "searchText": "Amharic" },
-	{ "abbrLang": "ar", "fullLang": "Arabic", "searchText": "Arabic" },
-	{ "abbrLang": "az", "fullLang": "Azerbaijani", "searchText": "Azerbaijani" },
-	{ "abbrLang": "bn", "fullLang": "Bangla", "searchText": "Bangla" },
-	{ "abbrLang": "bn", "fullLang": "Bengali", "searchText": "Bengali" },
-	{ "abbrLang": "ba", "fullLang": "Bosnian", "searchText": "Bosnian" },
-	{ "abbrLang": "bg", "fullLang": "Bulgarian", "searchText": "Bulgarian" },
-	{ "abbrLang": "mm", "fullLang": "Burmese", "searchText": "Burmese" },
-	{ "abbrLang": "ca", "fullLang": "Catalan", "searchText": "Catalan" },
-	{
-		"abbrLang": "yue",
-		"fullLang": "Chinese (Cantonese Traditional)",
-		"searchText": "Chinese Cantonese Traditional"
-	},
-	{
-		"abbrLang": "hk",
-		"fullLang": "Chinese (Hong Kong)",
-		"searchText": "Chinese Hong Kong"
-	},
-	{
-		"abbrLang": "cn",
-		"fullLang": "Chinese (Mainland)",
-		"searchText": "Chinese Mainland"
-	},
-	{
-		"abbrLang": "cmn",
-		"fullLang": "Chinese (Northeastern Mandarin)",
-		"searchText": "Chinese Northeastern Mandarin"
-	},
-	{
-		"abbrLang": "tw",
-		"fullLang": "Chinese (Taiwan)",
-		"searchText": "Chinese Taiwan"
-	},
-	{
-		"abbrLang": "tw",
-		"fullLang": "Chinese (Taiwanese Mandarin)",
-		"searchText": "Chinese Taiwanese Mandarin"
-	},
-	{ "abbrLang": "hr", "fullLang": "Croatian", "searchText": "Croatian" },
-	{ "abbrLang": "cz", "fullLang": "Czech", "searchText": "Czech" },
-	{ "abbrLang": "al", "fullLang": "Danish", "searchText": "Danish" },
-	{ "abbrLang": "nl", "fullLang": "Dutch", "searchText": "Dutch" },
-	{
-		"abbrLang": "en",
-		"fullLang": "English (India)",
-		"searchText": "English India"
-	},
-	{
-		"abbrLang": "en",
-		"fullLang": "English (Ireland)",
-		"searchText": "English Ireland"
-	},
-	{
-		"abbrLang": "en",
-		"fullLang": "English (Kenya)",
-		"searchText": "English Kenya"
-	},
-	{
-		"abbrLang": "en",
-		"fullLang": "English (New Zealand)",
-		"searchText": "English New Zealand"
-	},
-	{
-		"abbrLang": "en",
-		"fullLang": "English (Nigeria)",
-		"searchText": "English Nigeria"
-	},
-	{
-		"abbrLang": "en",
-		"fullLang": "English (Philippines)",
-		"searchText": "English Philippines"
-	},
-	{
-		"abbrLang": "en",
-		"fullLang": "English (Singapore)",
-		"searchText": "English Singapore"
-	},
-	{
-		"abbrLang": "en",
-		"fullLang": "English (South Africa)",
-		"searchText": "English South Africa"
-	},
-	{
-		"abbrLang": "en",
-		"fullLang": "English (Tanzania)",
-		"searchText": "English Tanzania"
-	},
-	{
-		"abbrLang": "en",
-		"fullLang": "English (United Kingdom)",
-		"searchText": "English United Kingdom"
-	},
-	{
-		"abbrLang": "et",
-		"fullLang": "Estonian (Estonia)",
-		"searchText": "Estonian Estonia"
-	},
-	{
-		"abbrLang": "fil",
-		"fullLang": "Filipino (Philippines)",
-		"searchText": "Filipino Philippines"
-	},
-	{
-		"abbrLang": "fi",
-		"fullLang": "Finnish (Finland)",
-		"searchText": "Finnish Finland"
-	},
-	{
-		"abbrLang": "fr",
-		"fullLang": "French (Belgium)",
-		"searchText": "French Belgium"
-	},
-	{
-		"abbrLang": "fr",
-		"fullLang": "French (Canada)",
-		"searchText": "French Canada"
-	},
-	{
-		"abbrLang": "fr",
-		"fullLang": "French (France)",
-		"searchText": "French France"
-	},
-	{
-		"abbrLang": "fr",
-		"fullLang": "French (Switzerland)",
-		"searchText": "French Switzerland"
-	},
-	{
-		"abbrLang": "gl",
-		"fullLang": "Galician (Spain)",
-		"searchText": "Galician Spain"
-	},
-	{
-		"abbrLang": "ka",
-		"fullLang": "Georgian (Georgia)",
-		"searchText": "Georgian Georgia"
-	},
-	{
-		"abbrLang": "de",
-		"fullLang": "German (Austria)",
-		"searchText": "German Austria"
-	},
-	{
-		"abbrLang": "de",
-		"fullLang": "German (Germany)",
-		"searchText": "German Germany"
-	},
-	{
-		"abbrLang": "de",
-		"fullLang": "German (Switzerland)",
-		"searchText": "German Switzerland"
-	},
-	{
-		"abbrLang": "el",
-		"fullLang": "Greek (Greece)",
-		"searchText": "Greek Greece"
-	},
-	{
-		"abbrLang": "gu",
-		"fullLang": "Gujarati (India)",
-		"searchText": "Gujarati India"
-	},
-	{
-		"abbrLang": "he",
-		"fullLang": "Hebrew (Israel)",
-		"searchText": "Hebrew Israel"
-	},
-	{
-		"abbrLang": "hi",
-		"fullLang": "Hindi (India)",
-		"searchText": "Hindi India"
-	},
-	{
-		"abbrLang": "hu",
-		"fullLang": "Hungarian (Hungary)",
-		"searchText": "Hungarian Hungary"
-	},
-	{
-		"abbrLang": "is",
-		"fullLang": "Icelandic (Iceland)",
-		"searchText": "Icelandic Iceland"
-	},
-	{
-		"abbrLang": "id",
-		"fullLang": "Indonesian (Indonesia)",
-		"searchText": "Indonesian Indonesia"
-	},
-	{
-		"abbrLang": "it",
-		"fullLang": "Italian (Italy)",
-		"searchText": "Italian Italy"
-	},
-	{
-		"abbrLang": "jv",
-		"fullLang": "Javanese (Indonesia)",
-		"searchText": "Javanese Indonesia"
-	},
-	{
-		"abbrLang": "kn",
-		"fullLang": "Kannada (India)",
-		"searchText": "Kannada India"
-	},
-	{
-		"abbrLang": "kk",
-		"fullLang": "Kazakh (Kazakhstan)",
-		"searchText": "Kazakh Kazakhstan"
-	},
-	{
-		"abbrLang": "km",
-		"fullLang": "Khmer (Cambodia)",
-		"searchText": "Khmer Cambodia"
-	},
-	{
-		"abbrLang": "ko",
-		"fullLang": "Korean (Korea)",
-		"searchText": "Korean Korea"
-	},
-	{ "abbrLang": "lo", "fullLang": "Lao (Laos)", "searchText": "Lao Laos" },
-	{
-		"abbrLang": "lv",
-		"fullLang": "Latvian (Latvia)",
-		"searchText": "Latvian Latvia"
-	},
-	{
-		"abbrLang": "lt",
-		"fullLang": "Lithuanian (Lithuania)",
-		"searchText": "Lithuanian Lithuania"
-	},
-	{
-		"abbrLang": "mk",
-		"fullLang": "Macedonian (Republic of North Macedonia)",
-		"searchText": "Macedonian Republic of North Macedonia"
-	},
-	{
-		"abbrLang": "ms",
-		"fullLang": "Malay (Malaysia)",
-		"searchText": "Malay Malaysia"
-	},
-	{
-		"abbrLang": "ml",
-		"fullLang": "Malayalam (India)",
-		"searchText": "Malayalam India"
-	},
-	{
-		"abbrLang": "mt",
-		"fullLang": "Maltese (Malta)",
-		"searchText": "Maltese Malta"
-	},
-	{
-		"abbrLang": "mr",
-		"fullLang": "Marathi (India)",
-		"searchText": "Marathi India"
-	},
-	{
-		"abbrLang": "mn",
-		"fullLang": "Mongolian (Mongolia)",
-		"searchText": "Mongolian Mongolia"
-	},
-	{
-		"abbrLang": "ne",
-		"fullLang": "Nepali (Nepal)",
-		"searchText": "Nepali Nepal"
-	},
-	{
-		"abbrLang": "nb",
-		"fullLang": "Norwegian (Bokmål, Norway)",
-		"searchText": "Norwegian Bokmål, Norway"
-	},
-	{
-		"abbrLang": "ps",
-		"fullLang": "Pashto (Afghanistan)",
-		"searchText": "Pashto Afghanistan"
-	},
-	{
-		"abbrLang": "fa",
-		"fullLang": "Persian (Iran)",
-		"searchText": "Persian Iran"
-	},
-	{
-		"abbrLang": "pl",
-		"fullLang": "Polish (Poland)",
-		"searchText": "Polish Poland"
-	},
-	{
-		"abbrLang": "pt",
-		"fullLang": "Portuguese (Brazil)",
-		"searchText": "Portuguese Brazil"
-	},
-	{
-		"abbrLang": "pt",
-		"fullLang": "Portuguese (Portugal)",
-		"searchText": "Portuguese Portugal"
-	},
-	{
-		"abbrLang": "ro",
-		"fullLang": "Romanian (Romania)",
-		"searchText": "Romanian Romania"
-	},
-	{
 		"abbrLang": "ru",
-		"fullLang": "Russian (Russia)",
+		"fullLang": "Russian",
 		"searchText": "Russian Russia"
 	},
 	{
-		"abbrLang": "sr",
-		"fullLang": "Serbian (Serbia)",
-		"searchText": "Serbian Serbia"
-	},
-	{
-		"abbrLang": "si",
-		"fullLang": "Sinhala (Sri Lanka)",
-		"searchText": "Sinhala Sri Lanka"
-	},
-	{
-		"abbrLang": "sk",
-		"fullLang": "Slovak (Slovakia)",
-		"searchText": "Slovak Slovakia"
-	},
-	{
-		"abbrLang": "sl",
-		"fullLang": "Slovenian (Slovenia)",
-		"searchText": "Slovenian Slovenia"
-	},
-	{
-		"abbrLang": "so",
-		"fullLang": "Somali (Somalia)",
-		"searchText": "Somali Somalia"
-	},
-	{
 		"abbrLang": "es",
-		"fullLang": "Spanish (Argentina)",
-		"searchText": "Spanish Argentina"
-	},
-	{
-		"abbrLang": "es",
-		"fullLang": "Spanish (Bolivia)",
-		"searchText": "Spanish Bolivia"
-	},
-	{
-		"abbrLang": "es",
-		"fullLang": "Spanish (Chile)",
-		"searchText": "Spanish Chile"
-	},
-	{
-		"abbrLang": "es",
-		"fullLang": "Spanish (Colombia)",
-		"searchText": "Spanish Colombia"
-	},
-	{
-		"abbrLang": "es",
-		"fullLang": "Spanish (Costa Rica)",
-		"searchText": "Spanish Costa Rica"
-	},
-	{
-		"abbrLang": "es",
-		"fullLang": "Spanish (Cuba)",
-		"searchText": "Spanish Cuba"
-	},
-	{
-		"abbrLang": "es",
-		"fullLang": "Spanish (Dominican Republic)",
-		"searchText": "Spanish Dominican Republic"
-	},
-	{
-		"abbrLang": "es",
-		"fullLang": "Spanish (Ecuador)",
-		"searchText": "Ecuador"
-	},
-	{
-		"abbrLang": "es",
-		"fullLang": "Spanish (El Salvador)",
-		"searchText": "El Salvador"
-	},
-	{
-		"abbrLang": "es",
-		"fullLang": "Spanish (Equatorial Guinea)",
-		"searchText": "Spanish Equatorial Guinea"
-	},
-	{
-		"abbrLang": "es",
-		"fullLang": "Spanish (Guatemala)",
-		"searchText": "Spanish Guatemala"
-	},
-	{
-		"abbrLang": "es",
-		"fullLang": "Spanish (Honduras)",
-		"searchText": "Spanish Honduras"
-	},
-	{
-		"abbrLang": "es",
-		"fullLang": "Spanish (Mexico)",
-		"searchText": "Spanish Mexico"
-	},
-	{
-		"abbrLang": "es",
-		"fullLang": "Spanish (Nicaragua)",
-		"searchText": "Spanish Nicaragua"
-	},
-	{
-		"abbrLang": "es",
-		"fullLang": "Spanish (Panama)",
-		"searchText": "Spanish Panama"
-	},
-	{
-		"abbrLang": "es",
-		"fullLang": "Spanish (Paraguay)",
-		"searchText": "Spanish Paraguay"
-	},
-	{
-		"abbrLang": "es",
-		"fullLang": "Spanish (Peru)",
-		"searchText": "Spanish Peru"
-	},
-	{
-		"abbrLang": "es",
-		"fullLang": "Spanish (Puerto Rico)",
-		"searchText": "Spanish Puerto Rico"
-	},
-	{
-		"abbrLang": "es",
-		"fullLang": "Spanish (Spain)",
-		"searchText": "Spanish Spain"
-	},
-	{
-		"abbrLang": "es",
-		"fullLang": "Spanish (United States)",
-		"searchText": "Spanish United States"
-	},
-	{
-		"abbrLang": "es",
-		"fullLang": "Spanish (Uruguay)",
-		"searchText": "Spanish Uruguay"
-	},
-	{
-		"abbrLang": "es",
-		"fullLang": "Spanish (Venezuela)",
-		"searchText": "Spanish Venezuela"
-	},
-	{
-		"abbrLang": "su",
-		"fullLang": "Sundanese (Indonesia)",
-		"searchText": "Sundanese Indonesia"
-	},
-	{
-		"abbrLang": "sw",
-		"fullLang": "Swahili (Kenya)",
-		"searchText": "Swahili Kenya"
-	},
-	{
-		"abbrLang": "sw",
-		"fullLang": "Swahili (Tanzania)",
-		"searchText": "Swahili Tanzania"
+		"fullLang": "Spanish",
+		"searchText": "Spanish"
 	},
 	{
 		"abbrLang": "sv",
-		"fullLang": "Swedish (Sweden)",
+		"fullLang": "Swedish",
 		"searchText": "Swedish Sweden"
 	},
 	{
-		"abbrLang": "ta",
-		"fullLang": "Tamil (India)",
-		"searchText": "Tamil India"
-	},
-	{
-		"abbrLang": "ta",
-		"fullLang": "Tamil (Malaysia)",
-		"searchText": "Tamil Malaysia"
-	},
-	{
-		"abbrLang": "ta",
-		"fullLang": "Tamil (Singapore)",
-		"searchText": "Tamil Singapore"
-	},
-	{
-		"abbrLang": "ta",
-		"fullLang": "Tamil (Sri Lanka)",
-		"searchText": "Tamil Sri Lanka"
-	},
-	{
-		"abbrLang": "te",
-		"fullLang": "Telugu (India)",
-		"searchText": "Telugu India"
-	},
-	{
-		"abbrLang": "th",
-		"fullLang": "Thai (Thailand)",
-		"searchText": "Thai Thailand"
-	},
-	{
 		"abbrLang": "tr",
-		"fullLang": "Turkish (Turkey)",
+		"fullLang": "Turkish",
 		"searchText": "Turkish Turkey"
 	},
 	{
-		"abbrLang": "uk",
-		"fullLang": "Ukrainian (Ukraine)",
-		"searchText": "Ukrainian Ukraine"
-	},
-	{ "abbrLang": "ur", "fullLang": "Urdu (India)", "searchText": "Urdu India" },
-	{
-		"abbrLang": "ur",
-		"fullLang": "Urdu (Pakistan)",
-		"searchText": "Urdu Pakistan"
-	},
-	{
-		"abbrLang": "uz",
-		"fullLang": "Uzbek (Uzbekistan)",
-		"searchText": "Uzbek Uzbekistan"
-	},
-	{
 		"abbrLang": "vi",
-		"fullLang": "Vietnamese (Vietnam)",
+		"fullLang": "Vietnamese",
 		"searchText": "Vietnamese Vietnam"
-	},
-	{
-		"abbrLang": "cy",
-		"fullLang": "Welsh (United Kingdom)",
-		"searchText": "Welsh United Kingdom"
-	},
-	{
-		"abbrLang": "zu",
-		"fullLang": "Zulu (South Africa)",
-		"searchText": "Zulu South Africa"
 	}
 ]
