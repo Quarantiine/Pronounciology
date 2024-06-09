@@ -133,11 +133,9 @@ export default function PronounceContainer() {
 		});
 	}, []);
 
-	// useEffect(() => {
-	// 	speechSynthesis.getVoices().map(function (voice) {
-	// 		console.log(voice);
-	// 	});
-	// });
+	useEffect(() => {
+		console.log(speechSynthesis.getVoices().map((voice) => voice));
+	});
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -150,77 +148,77 @@ export default function PronounceContainer() {
 		const voicesList = [
 			{
 				title: "Arabic",
-				voice: voices[9],
+				voice: voices[13],
 				searchText: "Arabic",
 			},
 			{
 				title: "Chinese",
-				voice: voices[56],
+				voice: voices[59],
 				searchText: "Chinese Hong Kong",
 			},
 			{
 				title: "English",
-				voice: voices[0],
+				voice: voices[2],
 				searchText: "English",
 			},
 			{
 				title: "French",
-				voice: voices[133],
+				voice: voices[137],
 				searchText: "French",
 			},
 			{
 				title: "German",
-				voice: voices[150],
+				voice: voices[154],
 				searchText: "German",
 			},
 			{
 				title: "Hebrew",
-				voice: voices[164],
+				voice: voices[168],
 				searchText: "Hebrew Israel",
 			},
 			{
 				title: "Italian",
-				voice: voices[176],
+				voice: voices[180],
 				searchText: "Italian",
 			},
 			{
 				title: "Japanese",
-				voice: voices[181],
+				voice: voices[3],
 				searchText: "Japanese",
 			},
 			{
 				title: "Korean",
-				voice: voices[190],
+				voice: voices[194],
 				searchText: "Korean Korea",
 			},
 			{
 				title: "Portuguese",
-				voice: voices[224],
+				voice: voices[225],
 				searchText: "Portuguese",
 			},
 			{
 				title: "Russian",
-				voice: voices[228],
+				voice: voices[232],
 				searchText: "Russian Russia",
 			},
 			{
 				title: "Spanish",
-				voice: voices[279],
+				voice: voices[244],
 				searchText: "Spanish",
 			},
 			{
 				title: "Swedish",
-				voice: voices[291],
+				voice: voices[296],
 				searchText: "Swedish Sweden",
 			},
 			{
 				title: "Turkish",
-				voice: voices[305],
+				voice: voices[309],
 				searchText: "Turkish Turkey",
 			},
 			{
 				title: "Vietnamese",
-				voice: voices[315],
+				voice: voices[319],
 				searchText: "Vietnamese Vietnam",
 			},
 		];
