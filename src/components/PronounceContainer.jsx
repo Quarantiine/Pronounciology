@@ -26,7 +26,7 @@ export default function PronounceContainer() {
 			await fetch(
 				`https://api.dictionaryapi.dev/api/v2/entries/${"en"}/${
 					inputText || "none"
-				}`
+				}`,
 			)
 				.then((response) => response.json())
 				.then((result) => {
@@ -117,7 +117,6 @@ export default function PronounceContainer() {
 	useEffect(() => {
 		if (inputText.length < 1) {
 			setInputDefinition("");
-			// inputTextRef.current?.value = "";
 		}
 	}, [inputText]);
 
@@ -133,9 +132,9 @@ export default function PronounceContainer() {
 		});
 	}, []);
 
-	useEffect(() => {
-		console.log(speechSynthesis.getVoices().map((voice) => voice));
-	});
+	// useEffect(() => {
+	// 	console.log(speechSynthesis.getVoices().map((voice) => voice));
+	// });
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -236,12 +235,20 @@ export default function PronounceContainer() {
 		if ("speechSynthesis" in window) {
 			if (inputText) {
 				!listOfInputText.map((item) => item).includes(inputText) &&
-					setListOfInputText((prevItems) => [inputText, ...prevItems]);
+					setListOfInputText((prevItems) => [
+						inputText,
+						...prevItems,
+					]);
 				speechSynthesis.speak(msg);
 			}
 		} else {
 			alert("Sorry, your browser doesn't support text to speech!");
 		}
+	};
+
+	const handleClearHistory = (e) => {
+		e.preventDefault();
+		setListOfInputText([]);
 	};
 
 	return (
@@ -257,13 +264,15 @@ export default function PronounceContainer() {
 							This word does not have a definition
 						</h1>
 					)}
-					{inputDefinition && inputText && textDefinition !== undefined && (
-						<InputTextDefinition
-							textDefinition={textDefinition}
-							loadingDefinition={loadingDefinition}
-							inputDefinition={inputDefinition}
-						/>
-					)}
+					{inputDefinition &&
+						inputText &&
+						textDefinition !== undefined && (
+							<InputTextDefinition
+								textDefinition={textDefinition}
+								loadingDefinition={loadingDefinition}
+								inputDefinition={inputDefinition}
+							/>
+						)}
 
 					<form className="w-full sm:w-80 h-auto bg-white border-2 rounded-3xl p-7 flex flex-col justify-center items-center gap-5 relative">
 						<div className="flex justify-center items-center gap-2 w-fit">
@@ -314,12 +323,18 @@ export default function PronounceContainer() {
 								<div className="relative w-full flex justify-center items-center">
 									<input
 										className={`pl-3 pr-8 sm:pr-2 py-2 outline-none border w-full text-center placeholder:text-center text-sm ${
-											inputText ? "rounded-l-3xl" : "rounded-3xl"
+											inputText
+												? "rounded-l-3xl"
+												: "rounded-3xl"
 										}`}
 										placeholder="Pronounce any word"
 										type="text"
-										onChange={(e) => handleTextChange(e.target.value)}
-										onKeyDown={(e) => e.key === "Enter" && handleSubmit(e)}
+										onChange={(e) =>
+											handleTextChange(e.target.value)
+										}
+										onKeyDown={(e) =>
+											e.key === "Enter" && handleSubmit(e)
+										}
 										ref={inputTextRef}
 									/>
 
@@ -336,25 +351,47 @@ export default function PronounceContainer() {
 								{historyDropdown && (
 									<div className="history-dropdown-container history-dropdown-overflow h-20 bg-white border border-t-transparent w-[90%] flex sm:hidden flex-col justify-start items-center overflow-x-hidden overflow-y-scroll px-4 py-2 rounded-b-md text-sm">
 										<h1 className="text-xl font-semibold w-full text-center">
-											Word History:
+											Word History
 										</h1>
 
-										{listOfInputText.length > 0 ? (
-											listOfInputText.map((item) => {
-												return (
-													<React.Fragment key={item}>
-														<button
-															onClick={handleHistoryWordSystem}
-															className="cursor-pointer w-full text-center hover:opacity-60 transition-all"
-														>
-															{item}
-														</button>
-													</React.Fragment>
-												);
-											})
-										) : (
-											<p className="text-gray-400">No History</p>
+										{listOfInputText.map((item) => item)
+											.length > 0 && (
+											<button
+												onClick={handleClearHistory}
+												className="btn !bg-red-500 text-white w-full"
+											>
+												Clear History
+											</button>
 										)}
+
+										<div className="flex flex-col justify-start items-start gap-1 w-full">
+											{listOfInputText.length > 0 ? (
+												listOfInputText.map(
+													(item, index) => {
+														return (
+															<div
+																className="flex justify-center items-start gap-1"
+																key={item}
+															>
+																<p className="text-gray-400">{`${index + 1}: `}</p>
+																<button
+																	onClick={
+																		handleHistoryWordSystem
+																	}
+																	className="cursor-pointer w-full text-start hover:opacity-60 transition-all"
+																>
+																	{item}
+																</button>
+															</div>
+														);
+													},
+												)
+											) : (
+												<p className="text-gray-400 w-full text-center">
+													No History
+												</p>
+											)}
+										</div>
 									</div>
 								)}
 							</div>
@@ -384,7 +421,9 @@ export default function PronounceContainer() {
 								{inputText && (
 									<button
 										className={`btn w-ful border text-black text-sm ${
-											inputDefinition ? "bg-[#eee]" : "bg-white"
+											inputDefinition
+												? "bg-[#eee]"
+												: "bg-white"
 										}`}
 										onClick={handleOpenSpeechSystem}
 									>
@@ -403,15 +442,24 @@ export default function PronounceContainer() {
 					</form>
 
 					<div
-						className={`history-dropdown-container history-dropdown-overflow w-full max-h-[180px] h-auto bg-white border-2 rounded-3xl flex sm:hidden flex-col justify-start items-start overflow-x-hidden overflow-y-scroll px-8 py-2`}
+						className={`history-dropdown-container history-dropdown-overflow w-full max-h-[180px] h-auto bg-white border-2 rounded-3xl flex sm:hidden flex-col justify-start items-start overflow-x-hidden overflow-y-scroll px-8 py-2 gap-2`}
 					>
 						<h1 className="text-xl font-semibold w-full text-center">
 							Word History
 						</h1>
 
-						<div className="flex flex-col justify-center items-center gap-1 w-full">
+						{listOfInputText.map((item) => item).length > 0 && (
+							<button
+								onClick={handleClearHistory}
+								className="btn !bg-red-500 text-white w-full"
+							>
+								Clear History
+							</button>
+						)}
+
+						<div className="flex flex-col justify-start items-start gap-1 w-full">
 							{listOfInputText.length > 0 ? (
-								listOfInputText.slice(0, 20).map((item, index) => {
+								listOfInputText.map((item, index) => {
 									return (
 										<div
 											className="flex justify-center items-start gap-1"
@@ -419,7 +467,9 @@ export default function PronounceContainer() {
 										>
 											<p className="text-gray-400">{`${index + 1}: `}</p>
 											<button
-												onClick={handleHistoryWordSystem}
+												onClick={
+													handleHistoryWordSystem
+												}
 												className="cursor-pointer w-full text-start hover:opacity-60 transition-all"
 											>
 												{item}
@@ -428,7 +478,9 @@ export default function PronounceContainer() {
 									);
 								})
 							) : (
-								<p className="text-gray-400 w-full text-center">No History</p>
+								<p className="text-gray-400 w-full text-center">
+									No History
+								</p>
 							)}
 						</div>
 					</div>
@@ -436,7 +488,9 @@ export default function PronounceContainer() {
 					<div className="flex flex-col justify-center items-center gap-2 w-full sm:w-[260px] h-fit mb-5 sm:mb-0">
 						<div
 							className={`w-full p-5 border-2 rounded-3xl flex justify-center items-center flex-col gap-5 relative overflow-x-hidden overflow-y-scroll overflow-hide-thumb ${
-								openDropDown ? "h-[350px] sm:h-[300px]" : "h-auto"
+								openDropDown
+									? "h-[350px] sm:h-[300px]"
+									: "h-auto"
 							}`}
 						>
 							<div className="w-full flex justify-center items-center flex-col gap-2 h-full">
@@ -459,7 +513,9 @@ export default function PronounceContainer() {
 											className="w-full bg-gray-100 py-2 px-4 text-center text-sm rounded-full outline-none"
 											type="text"
 											placeholder="Search Language"
-											onChange={(e) => setSearchQuery(e.target.value)}
+											onChange={(e) =>
+												setSearchQuery(e.target.value)
+											}
 										/>
 									</div>
 								)}
@@ -472,8 +528,10 @@ export default function PronounceContainer() {
 									{openDropDown &&
 										msgLangs
 											.sort((a, b) => {
-												const fullLangA = a.searchText.toLowerCase();
-												const fullLangB = b.searchText.toLowerCase();
+												const fullLangA =
+													a.searchText.toLowerCase();
+												const fullLangB =
+													b.searchText.toLowerCase();
 
 												if (fullLangA < fullLangB) {
 													return -1;
@@ -487,18 +545,30 @@ export default function PronounceContainer() {
 												if (
 													lang.searchText
 														.normalize("NFD")
-														.replace(/\p{Diacritic}/gu, "")
+														.replace(
+															/\p{Diacritic}/gu,
+															"",
+														)
 														.toLowerCase()
-														.includes(searchQuery.toLowerCase())
+														.includes(
+															searchQuery.toLowerCase(),
+														)
 												) {
 													return (
-														<React.Fragment key={index}>
+														<React.Fragment
+															key={index}
+														>
 															<button
 																className="drop-down-btn"
 																onClick={() =>
-																	handleChangeLang(lang.abbrLang, lang.fullLang)
+																	handleChangeLang(
+																		lang.abbrLang,
+																		lang.fullLang,
+																	)
 																}
-																name={lang.abbrLang}
+																name={
+																	lang.abbrLang
+																}
 															>
 																{lang.fullLang}
 															</button>
@@ -513,9 +583,12 @@ export default function PronounceContainer() {
 												.normalize("NFD")
 												.replace(/\p{Diacritic}/gu, "")
 												.toLowerCase()
-												.includes(searchQuery.toLowerCase())
+												.includes(
+													searchQuery.toLowerCase(),
+												),
 										)
-										.map((lang) => lang.fullLang).length < 1 && (
+										.map((lang) => lang.fullLang).length <
+										1 && (
 										<>
 											<p className="text-sm text-gray-400 text-center">
 												No Language
@@ -527,11 +600,20 @@ export default function PronounceContainer() {
 						</div>
 
 						<div
-							className={`history-dropdown-container history-dropdown-overflow w-full max-h-[180px] h-auto bg-white border-2 rounded-3xl hidden sm:flex flex-col justify-start items-start overflow-x-hidden overflow-y-scroll px-8 py-2 gap-3`}
+							className={`history-dropdown-container history-dropdown-overflow w-full max-h-[180px] h-auto bg-white border-2 rounded-3xl hidden sm:flex flex-col justify-start items-start overflow-x-hidden overflow-y-scroll px-5 py-2 gap-2`}
 						>
 							<h1 className="text-xl font-semibold w-full text-center">
 								Word History
 							</h1>
+
+							{listOfInputText.map((item) => item).length > 0 && (
+								<button
+									onClick={handleClearHistory}
+									className="btn !bg-red-500 text-white w-full"
+								>
+									Clear History
+								</button>
+							)}
 
 							<div className="flex flex-col justify-start items-start gap-1 w-full">
 								{listOfInputText.length > 0 ? (
@@ -543,7 +625,9 @@ export default function PronounceContainer() {
 											>
 												<p className="text-gray-400">{`${index + 1}: `}</p>
 												<button
-													onClick={handleHistoryWordSystem}
+													onClick={
+														handleHistoryWordSystem
+													}
 													className="cursor-pointer w-full text-start hover:opacity-60 transition-all"
 												>
 													{item}
@@ -552,7 +636,9 @@ export default function PronounceContainer() {
 										);
 									})
 								) : (
-									<p className="text-gray-400 w-full text-center">No History</p>
+									<p className="text-gray-400 w-full text-center">
+										No History
+									</p>
 								)}
 							</div>
 						</div>
